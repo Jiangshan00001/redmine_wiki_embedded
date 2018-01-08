@@ -1,2 +1,0 @@
-# redmine_wiki_embedded
-redmine_wiki_embedded
