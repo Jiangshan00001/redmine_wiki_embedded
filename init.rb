@@ -30,17 +30,18 @@ Redmine::WikiFormatting::Macros.register do
         	sub1 = page_cont.to_s[first_line_index,page_cont.to_s.length]
 	else
         	sub1 = "EMPTY"	
-	end
-        formatting = Setting.text_formatting
-	text = Redmine::WikiFormatting.to_html(formatting, sub1, :object => page.content)
-        out = text.html_safe
-        @included_wiki_pages.pop
-         out =
-                  link_to(page.title,
-                          controller: 'wiki', action: 'show',
-                          project_id: page.project, id: page.title)+"<br/> <div style=' border: #759fcf solid 1px'> ".html_safe+ out +"</div>".html_safe
+  end
 
-	out
+  out = textilizable(sub1)
+
+
+  @included_wiki_pages.pop
+   out =
+            link_to(page.title,
+                    controller: 'wiki', action: 'show',
+                    project_id: page.project, id: page.title)+"<br/> <div style=' border: #759fcf solid 1px'> ".html_safe+ out +"</div>".html_safe
+
+	out.html_safe
 	
 	
   end
