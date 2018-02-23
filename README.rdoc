@@ -3,3 +3,5 @@
 Embed a Wiki page to another wiki page. Examples:\n\n
 <pre>{{embedded_wiki(wiki_page_name)}}\n 
 same as macro{{include}} except it add a link to the included wiki 
+
+no migrate is needed.
